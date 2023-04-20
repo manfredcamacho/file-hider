@@ -17,7 +17,7 @@ def printHeader():
 
 def printHelp():
     print(
-        'Usage: python file-hider.py -c camouflaged_file -s secret_file -o output_file')
+        f'Usage: python3 {sys.argv[0]} -c camouflaged_file -s secret_file -o output_file')
     print()
     print('Options for hide files:')
     print('  -c, --camouflaged-file: the file to hide the secret file in')
