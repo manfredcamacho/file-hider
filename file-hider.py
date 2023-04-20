@@ -18,13 +18,17 @@ def printHeader():
 def printHelp():
     print(
         'Usage: python file-hider.py -c camouflaged_file -s secret_file -o output_file')
-    print('Options:')
+    print()
+    print('Options for hide files:')
     print('  -c, --camouflaged-file: the file to hide the secret file in')
     print('  -s, --secret-file: the file to hide')
     print('  -o, --output-file: the output file')
     print()
-    print(
-        'U')
+    print('Options for recover files:')
+    print('  -r, --recover-file: The camouflaged file to recover files from.')
+    print('  -d, --destination: The destination folder to recover files to. (optional)')
+    print()
+    print()
 
 
 def printInvalidArguments():
