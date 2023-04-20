@@ -2,7 +2,7 @@ import sys
 import os
 
 CUSTOM_EOF = b'\x1f\x66\x69\x6c\x65\x2d\x68\x69\x64\x65\x72\x1f'
-FILE_NAME_SEPARATOR = b'\x1c'
+FILE_NAME_SEPARATOR = b'\x1c\x73\x70\x6C\x69\x74\x1c'
 
 
 def printHeader():
