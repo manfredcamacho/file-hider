@@ -2,7 +2,8 @@ import sys
 import os
 
 CUSTOM_EOF = b'\x1f\x66\x69\x6c\x65\x2d\x68\x69\x64\x65\x72\x1f'
-FILE_NAME_SEPARATOR = b'\x1c'
+FILE_NAME_SEPARATOR = b'\x1c\x73\x70\x6C\x69\x74\x1c'
+PREFIX_RECOVERED_FILE = 'recovered_'
 
 
 def printHeader():
@@ -77,12 +78,13 @@ def recover_files(camouflaged_file_name, destination_folder):
     print()
 
     print('Recovering original camouflaged file ...')
-    with open('recover_' + get_file_name(camouflaged_file_name), 'wb') as recover_camouflaged_file:
+    with open(PREFIX_RECOVERED_FILE + get_file_name(camouflaged_file_name), 'wb') as recover_camouflaged_file:
         recover_camouflaged_file.write(camouflaged_data[0])
 
     for i in range(len(camouflaged_data) - 1):
         secret_file = camouflaged_data[i + 1].split(FILE_NAME_SEPARATOR)
-        secret_file_name = secret_file[0].decode('utf-8')
+        secret_file_name = PREFIX_RECOVERED_FILE + \
+            secret_file[0].decode('utf-8')
         secret_file_data = secret_file[1]
 
         print('Recovering file ' + secret_file_name + '...')
